@@ -74,18 +74,3 @@ int main(int argc, char* argv[])
     std::cout << "source file log. size: " << sourceLog << " source file phys. size: " << sourceLog + sourcePhys << std::endl;
     std::cout << "destinaton file log. size: " << destinationPhys << " destination file phys. size: " << destinationPhys + destinationLog << std::endl;
 }
-
-
-compiler = g++
-flag = -c
-
-all: main
-
-main: main.o
-$(compiler) main.o -o main
-
-main.o: main.cpp
-$(compiler) $(flag) main.cpp -o main.o
-
-clean:
-rm *.o main
